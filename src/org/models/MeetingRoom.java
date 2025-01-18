@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 public class MeetingRoom {
-    public String name;
-    public String id;
+    private String name;
+    private String id;
 }

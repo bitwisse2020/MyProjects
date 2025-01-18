@@ -3,17 +3,18 @@ package org.models;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Data
 @Builder
 public class Booking {
-    public String bookingId;
-    public String meetingRoomId;
-    public Date startTime;
-    public Date endTime;
-    public String userId;
+    private String bookingId;
+    private String meetingRoomId;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
+    private String userId;
 
-    public Booking(String toString, String roomId, Date startTime, Date endTime, String userId) {
+    public Booking(String toString, String roomId, LocalDateTime startTime, LocalDateTime endTime, String userId) {
     }
 }

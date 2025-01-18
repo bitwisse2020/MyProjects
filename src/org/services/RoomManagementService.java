@@ -2,11 +2,14 @@ package org.services;
 
 import org.models.MeetingRoom;
 
-import java.util.List;
 import java.util.Map;
 
 public class RoomManagementService {
-    Map<String,MeetingRoom> meetingRooms;
+    final Map<String,MeetingRoom> meetingRooms;
+
+    public RoomManagementService(Map<String, MeetingRoom> meetingRooms) {
+        this.meetingRooms = meetingRooms;
+    }
 
     public void addMeetingRoom(MeetingRoom room){
         if(!meetingRooms.containsKey(room.getId())){
