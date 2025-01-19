@@ -70,9 +70,27 @@ public class BookingManagementService {
         }
     }
     public void removeBooking(String bookingId){
+        synchronized (bookings) {
+            for (Map.Entry<String, List<Booking>> entry : bookings.entrySet()) {
+                List<Booking> roomBookings = entry.getValue();
+                synchronized (roomBookings) {
+                    Optional<Booking> bookingToRemove = roomBookings.stream()
+                            .filter(booking -> booking.getBookingId().equals(bookingId))
+                            .findFirst();
 
+                    if (bookingToRemove.isPresent()) {
+                        roomBookings.remove(bookingToRemove.get());
+                        System.out.println("Booking removed: " + bookingId);
+                        return;
+                    }
+                }
+            }
+            System.out.println("Booking ID not found: " + bookingId);
+        }
     }
 
-
+    private static boolean checkIfBookingExistsInRoom(String bookingId, List<Booking> bookingListForRoom) {
+        return bookingListForRoom.stream().anyMatch(booking -> booking.getBookingId().equals(bookingId));
+    }
 
 }

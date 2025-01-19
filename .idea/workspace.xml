@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4510e10d-7a09-450e-bb96-922cff6b3cae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/models/MeetingRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/models/MeetingRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/services/BookingManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/services/BookingManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/services/NotificationManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/services/NotificationManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/services/RoomManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/services/RoomManagementService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
