@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4510e10d-7a09-450e-bb96-922cff6b3cae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/models/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/models/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/models/MeetingRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/models/MeetingRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/models/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/models/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/services/BookingManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/services/BookingManagementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/services/NotificationManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/services/NotificationManagementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/services/RoomManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/services/RoomManagementService.java" afterDir="false" />

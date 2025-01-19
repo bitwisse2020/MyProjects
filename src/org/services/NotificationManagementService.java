@@ -3,14 +3,12 @@ package org.services;
 import org.models.Notification;
 
 import java.time.LocalDateTime;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.*;
 
 public class NotificationManagementService {
     private final ConcurrentHashMap<LocalDateTime, Notification> notificationMap;
     private final PriorityBlockingQueue<LocalDateTime> notificationQueue;
-
+    private final ScheduledExecutorService scheduler= Executors.newScheduledThreadPool(1);
     public NotificationManagementService() {
         this.notificationMap = new ConcurrentHashMap<>();
         this.notificationQueue= new PriorityBlockingQueue<>();
@@ -24,17 +22,20 @@ public class NotificationManagementService {
         }
         }
     public void SendNotification(){
-        LocalDateTime currentTime = LocalDateTime.now();
-        while (!notificationQueue.isEmpty() && !notificationQueue.peek().isAfter(currentTime)) {
-            LocalDateTime notificationTime;
-            synchronized (this) {
-                notificationTime = notificationQueue.poll();
+        scheduler.scheduleAtFixedRate(()-> {
+            LocalDateTime currentTime = LocalDateTime.now();
+            while (!notificationQueue.isEmpty() && !notificationQueue.peek().isAfter(currentTime)) {
+                LocalDateTime notificationTime;
+                synchronized (this) {
+                    notificationTime = notificationQueue.poll();
+                }
+                assert notificationTime != null;
+                Notification notification = notificationMap.remove(notificationTime);
+                if (notification != null) {
+                    deliverNotification(notification); // Simulates notification delivery
+                }
             }
-            Notification notification = notificationMap.remove(notificationTime);
-            if (notification != null) {
-                deliverNotification(notification); // Simulates notification delivery
-            }
-        }
+        },0,1,TimeUnit.MINUTES);
     }
 
     private void deliverNotification(Notification notification) {
